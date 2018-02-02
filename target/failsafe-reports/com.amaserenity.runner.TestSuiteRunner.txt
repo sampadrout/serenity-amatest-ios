@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.amaserenity.runner.TestSuiteRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 76.438 s <<< FAILURE! - in com.amaserenity.runner.TestSuiteRunner
+FTUX - Existing User login(Login page scenarios)  Time elapsed: 2.074 s  <<< FAILURE!
+net.thucydides.core.pages.WrongPageError: 
+The page object class com.amaserenity.pages.LoginPage looks dodgy:
+Failed to instantiate page (java.lang.IllegalArgumentException: Can not set net.serenitybdd.core.pages.WebElementFacade field com.amaserenity.pages.LoginPage.emailAddress to org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4)
+

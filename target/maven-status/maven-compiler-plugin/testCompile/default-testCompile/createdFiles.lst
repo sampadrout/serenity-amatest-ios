@@ -1,0 +1,5 @@
+com/amaserenity/stepdefinations/LoginStepDefination.class
+com/amaserenity/runner/TestSuiteRunner.class
+com/amaserenity/pages/LoginPage.class
+com/amaserenity/steps/LoginSteps.class
+com/amaserenity/utils/AppiumServer.class
