@@ -2,18 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.powerplan</groupId>
-    <artifactId>RivaSerenityCucumberMaven</artifactId>
+    
+    <groupId>com.ama</groupId>
+    <artifactId>AMA_Automation_RegressionTesting</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
-    <name>AMA project with Cucumber, Serenity, Appium and Gradle</name>
+    <name>AMA Project</name>
+    <description>Web Analytics Automation with BDD Approach using Serenity, Cucumber</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>1.1.39</serenity.version>
-        <serenity.cucumber.version>1.1.10</serenity.cucumber.version>
-        <webdriver.driver>chrome</webdriver.driver>
+        <serenity.version>1.8.22-rc.2</serenity.version>
+        <serenity.junit.version>1.8.21</serenity.junit.version>
+        <serenity.cucumber.version>1.6.10</serenity.cucumber.version>
+        <serenity.jira.plugin>1.8.0</serenity.jira.plugin>
     </properties>
 
     <repositories>
@@ -41,17 +43,17 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
-            <version>1.8.21</version>
+            <version>${serenity.version}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-junit</artifactId>
-            <version>1.8.21</version>
+            <version>${serenity.version}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber</artifactId>
-            <version>1.6.10</version>
+            <version>${serenity.cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -76,14 +78,20 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jira-plugin</artifactId>
-            <version>1.8.0</version>
+            <version>${serenity.jira.plugin}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jira-requirements-provider</artifactId>
-            <version>1.8.0</version>
+            <version>${serenity.jira.plugin}</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-jdk14</artifactId>
+        	<version>1.7.25</version>
         </dependency>
     </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -101,10 +109,10 @@
                     <includes>
                         <include>**/*.java</include>
                     </includes>
-                    <argLine>-Xmx512m</argLine>
+                    <!--argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>
-                    </systemPropertyVariables>
+                    </systemPropertyVariables-->
                 </configuration>
                 <executions>
                     <execution>
@@ -118,7 +126,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.7.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -127,7 +135,14 @@
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.version}</version>
+                <version>1.8.22-rc.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
@@ -137,13 +152,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-jira-requirements-provider</artifactId>
-                        <version>1.2.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>

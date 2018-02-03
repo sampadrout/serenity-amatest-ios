@@ -36,7 +36,7 @@
     <script class="code" type="text/javascript">$(document).ready(function () {
         var test_results_plot = $.jqplot('test_results_pie_chart', [
             [
-                ['Passing', 0],
+                ['Passing', 1],
                 
                 ['Pending', 0],
                 
@@ -73,17 +73,17 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '0 / 0 tests passed' },
-                {label: '0 / 0 tests pending'},
-                {label: '0 / 0 tests not executed'},
-                {label: '0 / 0 tests failed'},
-                {label: '0 / 0 errors'}
+                {label: '1 / 1 tests passed' },
+                {label: '0 / 1 tests pending'},
+                {label: '0 / 1 tests not executed'},
+                {label: '0 / 1 tests failed'},
+                {label: '0 / 1 errors'}
             ]
         });
 
         var weighted_test_results_plot = $.jqplot('weighted_test_results_pie_chart', [
             [
-                ['Passing', 0],
+                ['Passing', 1],
                 
                 ['Pending', 0],
                 
@@ -121,11 +121,11 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '0 / 0 tests passed (0% of all test steps)' },
-                {label: '0 / 0 tests pending'},
-                {label: '0 / 0 tests not executed'},
-                {label: '0 / 0 tests failed (0% of all test steps)'},
-                {label: '0 / 0 errors (0% of all test steps)'}
+                {label: '1 / 1 tests passed (1% of all test steps)' },
+                {label: '0 / 1 tests pending'},
+                {label: '0 / 1 tests not executed'},
+                {label: '0 / 1 tests failed (0% of all test steps)'},
+                {label: '0 / 1 errors (0% of all test steps)'}
             ]
         });
 
@@ -158,9 +158,9 @@
 <body class="results-page">
 <div id="topheader">
     <div id="topbanner">
-        <div id="logo"><a href="index.html"><img src="images/serenity-bdd-logo.png" border="0"/></a></div>
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
-            <span class="projectname"></span>
+            <span class="projectname">AMA Test</span>
         </div>
     </div>
 </div>
@@ -186,7 +186,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 02-02-2018 16:27</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 03-02-2018 17:56</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -207,6 +207,51 @@
                     </tr>
                 </table>
 
+                    <h2>Driver capabilities: appium</h2>
+                    <table class="table table-striped build-info">
+                            <tr>
+                                <td style="width: 30%">app</td><td>/Users/sampadrout/Downloads/app-ama-release.apk</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">appPackage</td><td>com.thinkrite.assistant</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">deviceScreenSize</td><td>1440x2560</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">appWaitActivity</td><td>com.thinkrite.assistant.wizard.WizardFirstPageActivity</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">appWaitPackage</td><td>com.thinkrite.assistant</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">deviceName</td><td>192.168.61.101:5555</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">platform</td><td>LINUX</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">deviceUDID</td><td>192.168.61.101:5555</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">appActivity</td><td>com.thinkrite.assistant.wizard.WizardFirstPageActivity</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">hub</td><td>http://127.0.0.1:4723/wd/hub</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">platformVersion</td><td>7.1.1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">automationName</td><td>Appium</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">deviceModel</td><td>Google_Nexus_6P_7.1</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">deviceManufacturer</td><td>Genymotion</td>
+                            </tr>
+                    </table>
 
 
             </div>
@@ -216,7 +261,7 @@
 </div>
 <div id="beforefooter"></div>
 <div id="bottomfooter">
-    <span class="version">Serenity version 1.1.39</span>
+    <span class="version">Serenity version 1.8.1</span>
 </div>
 
 </body>
