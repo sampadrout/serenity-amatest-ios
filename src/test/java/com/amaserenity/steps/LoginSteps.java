@@ -50,4 +50,10 @@ public class LoginSteps extends ScenarioSteps{
 		assertThat(loginPage.isEWSPageShown()).isTrue();
 
 	}
+	
+//	@Step
+//	public void addExchangeAccount(){
+//		assertThat(loginPage.enterExchangeAccountDetails());
+//
+//	}
 }
