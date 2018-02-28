@@ -25,13 +25,6 @@ public class LoginPage extends PageObject{
 
 	@FindBy(id="com.thinkrite.assistant:id/e164PhNumEditText")
 	private WebElementFacade phoneNumber;
-
-//	@FindBy(id="com.thinkrite.assistant:id/buttonSignIn")
-//	@FindBy(xpath="resource-id=com.thinkrite.assistant:id/buttonSignIn")
-//	@FindBy(xpath="//*[@text='SIGN IN']")
-//	@FindBy(id="com.thinkrite.assistant:id/buttonSignIn")
-//	@FindBy(xpath="//*[@class='android.widget.Button' and @text='SIGN IN']")
-//	@androidfindby(xpath="//android.widget.Button[@text='Log In']")
 	
 	@FindBy(id="com.thinkrite.assistant:id/buttonSignIn")
 	private WebElementFacade signIn;

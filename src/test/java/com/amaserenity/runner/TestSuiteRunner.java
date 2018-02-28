@@ -24,8 +24,9 @@ import net.thucydides.core.annotations.Managed;
 public class TestSuiteRunner {
 	
 /*	This is to manage webdriver instance by serenity */
-//	@Managed(uniqueSession = true)
-//    WebDriver appiumDriver;
+	
+	@Managed(uniqueSession = true) //@Managed(uniqueSession = true)
+	WebDriver appiumDriver;
 	
     @BeforeClass
     public static void startAppium() {
