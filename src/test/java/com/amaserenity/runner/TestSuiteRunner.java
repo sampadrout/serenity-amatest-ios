@@ -1,8 +1,5 @@
 package com.amaserenity.runner;
 
-import static com.amaserenity.utils.SeleniumGridServer.startSeleniumGridServer;
-import static com.amaserenity.utils.SeleniumGridServer.stopSeleniumGridServer;
-
 import java.io.IOException;
 
 import static com.amaserenity.utils.AppiumServer.startAppiumServer;
@@ -35,13 +32,11 @@ public class TestSuiteRunner {
 	
     @BeforeClass
     public static void startAppium() throws IOException {
-//    	startSeleniumGridServer();
-//        startAppiumServer();
+        startAppiumServer();
     }
 
     @AfterClass
     public static void stopAppium() throws IOException {
-//    	stopSeleniumGridServer();
-//        stopAppiumServer();
+        stopAppiumServer();
     }   
 }
