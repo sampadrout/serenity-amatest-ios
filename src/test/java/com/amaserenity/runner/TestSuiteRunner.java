@@ -1,9 +1,14 @@
 package com.amaserenity.runner;
 
+import static com.amaserenity.utils.SeleniumGridServer.startSeleniumGridServer;
+import static com.amaserenity.utils.SeleniumGridServer.stopSeleniumGridServer;
+
+import java.io.IOException;
 
 import static com.amaserenity.utils.AppiumServer.startAppiumServer;
 import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
 
+import org.apache.commons.exec.ExecuteException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -25,16 +30,18 @@ public class TestSuiteRunner {
 	
 /*	This is to manage webdriver instance by serenity */
 	
-	@Managed(uniqueSession = true) //@Managed(uniqueSession = true)
+	@Managed(uniqueSession = true)
 	WebDriver appiumDriver;
 	
     @BeforeClass
-    public static void startAppium() {
-        startAppiumServer();
+    public static void startAppium() throws IOException {
+//    	startSeleniumGridServer();
+//        startAppiumServer();
     }
 
     @AfterClass
-    public static void stopAppium() {
-        stopAppiumServer();
+    public static void stopAppium() throws IOException {
+//    	stopSeleniumGridServer();
+//        stopAppiumServer();
     }   
 }
