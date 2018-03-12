@@ -5,7 +5,6 @@ import java.io.IOException;
 import static com.amaserenity.utils.AppiumServer.startAppiumServer;
 import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
 
-import org.apache.commons.exec.ExecuteException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -31,12 +30,12 @@ public class TestSuiteRunner {
 	WebDriver appiumDriver;
 	
     @BeforeClass
-    public static void startAppium() throws IOException {
+    public static void setUp() throws IOException {
         startAppiumServer();
     }
 
     @AfterClass
-    public static void stopAppium() throws IOException {
+    public static void tearDown() throws IOException {
         stopAppiumServer();
     }   
 }

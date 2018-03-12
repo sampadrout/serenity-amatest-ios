@@ -1,4 +1,4 @@
-Serenity+Appium+Serenity-Cucumber
+Appium+Serenity-Cucumber+JUNIT
 ---------------------------------
 Maven dependencies required
 1. Serenity Core

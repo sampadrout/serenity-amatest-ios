@@ -6,11 +6,14 @@
 
 package com.amaserenity.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import cucumber.api.DataTable;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -52,12 +55,14 @@ public class LoginPage extends PageObject{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.thinkrite.assistant:id/logoLogin")) );
 	}
 
-	public void enterCredentials(){
-		element(emailAddress).sendKeys("traqatest2@gmail.com");                
-		element(password).sendKeys("welcometr1");
-		element(phoneNumber).sendKeys("9546532544");
-//		WebDriverWait wait = new WebDriverWait(getDriver(), 60);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.thinkrite.assistant:id/buttonSignIn")));
+	public void enterCredentials(List<List<String>> data) throws Throwable {
+		
+		//Write the code to handle Data Table
+//		List<List<String>> data = logindetails.raw();
+				
+		element(emailAddress).sendKeys(data.get(0).get(0));                
+		element(password).sendKeys(data.get(0).get(1));
+		element(phoneNumber).sendKeys(data.get(0).get(2));
 		element(signIn).waitUntilClickable().click();
 	}
 

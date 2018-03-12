@@ -5,7 +5,11 @@ import net.thucydides.core.annotations.Step;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import com.amaserenity.pages.LoginPage;
+
+import cucumber.api.DataTable;
 
 public class LoginSteps extends ScenarioSteps{
 	private static LoginPage loginPage;
@@ -16,8 +20,8 @@ public class LoginSteps extends ScenarioSteps{
 	}
 
 	@Step
-	public void enterLoginData(){
-		loginPage.enterCredentials();
+	public void enterLoginData(List<List<String>> data) throws Throwable {
+		loginPage.enterCredentials(data);
 	}
 
 	@Step
