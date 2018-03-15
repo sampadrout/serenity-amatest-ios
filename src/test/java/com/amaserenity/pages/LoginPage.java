@@ -6,6 +6,8 @@
 
 package com.amaserenity.pages;
 
+import com.amaserenity.model.UserAccount;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -13,7 +15,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.api.DataTable;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -32,6 +33,9 @@ public class LoginPage extends PageObject{
 	@FindBy(id="com.thinkrite.assistant:id/buttonSignIn")
 	private WebElementFacade signIn;
 
+	@FindBy(id="android:id/message")
+	private WebElementFacade loginFailed;
+	
 	@FindBy(xpath="//*[@text='Calendars']")
 	private WebElementFacade calendar;
 	
@@ -55,17 +59,23 @@ public class LoginPage extends PageObject{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.thinkrite.assistant:id/logoLogin")) );
 	}
 
-	public void enterCredentials(List<List<String>> data) throws Throwable {
-		
-		//Write the code to handle Data Table
-//		List<List<String>> data = logindetails.raw();
+	public void enterCredentials(List<UserAccount> userAccounts) throws Throwable {
 				
-		element(emailAddress).sendKeys(data.get(0).get(0));                
-		element(password).sendKeys(data.get(0).get(1));
-		element(phoneNumber).sendKeys(data.get(0).get(2));
-		element(signIn).waitUntilClickable().click();
+        for (UserAccount userAccount : userAccounts) {
+    		element(emailAddress).sendKeys(userAccount.getUsername());                
+    		element(password).sendKeys(userAccount.getPassword());
+    		element(phoneNumber).sendKeys(userAccount.getPhonenumber());
+    		element(signIn).waitUntilClickable().click();
+        }
 	}
-
+	
+	public boolean isLoginFailedMsgShown(){
+		WebDriverWait wait = new WebDriverWait(getDriver(), 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/button1")));
+		return element(loginFailed).getText().contentEquals("Login failed due to an incorrect username or password.");
+	}
+	
+	
 	public boolean isCalendarPageShown(){
 		WebDriverWait wait = new WebDriverWait(getDriver(), 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@text='Calendars']")) );

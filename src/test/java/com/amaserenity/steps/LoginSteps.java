@@ -6,24 +6,31 @@ import net.thucydides.core.annotations.Step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Map;
 
+import com.amaserenity.model.UserAccount;
 import com.amaserenity.pages.LoginPage;
 
 import cucumber.api.DataTable;
 
 public class LoginSteps extends ScenarioSteps{
-	private static LoginPage loginPage;
-
+	LoginPage loginPage;
+	
 	@Step
 	public void loginPage(){
 		loginPage.gotoLoginPage();
 	}
 
 	@Step
-	public void enterLoginData(List<List<String>> data) throws Throwable {
-		loginPage.enterCredentials(data);
+	public void enterUsernameAndPassword(List<UserAccount> userAccounts) throws Throwable {
+		loginPage.enterCredentials(userAccounts);
 	}
-
+	
+	@Step
+	public void checkLoginFailedMsg(){
+		assertThat(loginPage.isLoginFailedMsgShown()).isTrue();
+	}
+	
 	@Step
 	public void checkCalendarPage(){
 		assertThat(loginPage.isCalendarPageShown()).isTrue();
