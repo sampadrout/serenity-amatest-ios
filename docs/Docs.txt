@@ -7,6 +7,10 @@ Maven dependencies required
 4. assertj
 5. junit
 
+Serenity with JUNIT
+--------------------
+
+
 Folder Structure
 ----------------
 root
