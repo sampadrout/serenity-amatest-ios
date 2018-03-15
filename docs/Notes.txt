@@ -6,7 +6,6 @@ a. appium
 b. selenium hub
 c. android emulator node
 
-
 Below is the command line execution
 ------------------------------------
 mvn verify -Dappium.hub=http://127.0.0.1:4723/wd/hub -Dwebdriver.driver=appium
