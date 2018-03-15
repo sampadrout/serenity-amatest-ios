@@ -2,19 +2,18 @@ package com.amaserenity.runner;
 
 import java.io.IOException;
 
-import static com.amaserenity.utils.AppiumServer.startAppiumServer;
-import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import org.openqa.selenium.WebDriver;
+import static com.amaserenity.utils.AppiumServer.startAppiumServer;
+import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 
 import net.serenitybdd.cucumber.CucumberWithSerenity;
-import net.thucydides.core.annotations.Managed;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
@@ -26,8 +25,8 @@ public class TestSuiteRunner {
 	
 /*	This is to manage webdriver instance by serenity */
 	
-	@Managed(uniqueSession = true)
-	WebDriver appiumDriver;
+//	@Managed(uniqueSession = true)
+//	WebDriver appiumDriver;
 	
     @BeforeClass
     public static void setUp() throws IOException {
