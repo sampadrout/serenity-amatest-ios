@@ -10,13 +10,13 @@ Feature: A registered user can log on to BM app
   Scenario: Existing user Verification
     When user logs in using valid credentials as below
         | username 							| password		|	phonenumber	|
-    		| traqatest2@gmail.com  | welcometr1	|	9546532543	|    
+    		| traqatest5@gmail.com  | welcometr1	|	9546532543	|    
     Then he should be given access to the app
 
   Scenario: Logging on with an incorrect password
     When user logs on with wrong password as below
     		| username 							| password		|	phonenumber	|
-    		| traqatest2@gmail.com  | wrong	|	9546532543	|
+    		| traqatest5@gmail.com  | wrong	|	9546532543	|
     Then he should be informed that his password was incorrect
 
   #Scenario: Logging on with an expired account
