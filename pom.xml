@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ama</groupId>
-	<artifactId>AMA_Automation_RegressionTesting</artifactId>
+	<artifactId>BM_Automation_RegressionTesting</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<name>AMA Project</name>
-	<description>AMA automation testing with BDD Approach using Serenity, Cucumber</description>
+	<name>BM Project</name>
+	<description>BM automation testing with BDD Approach using Serenity, Cucumber</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
