@@ -7,6 +7,7 @@
 package com.amaserenity.pages;
 
 import com.amaserenity.model.UserAccount;
+import com.amaserenity.utils.StringEncrypt;
 
 import java.util.List;
 
@@ -56,7 +57,7 @@ public class LoginPage extends PageObject{
 
 	public void gotoLoginPage(){
 		WebDriverWait wait = new WebDriverWait(getDriver(), 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.thinkrite.assistant:id/logoLogin")) );
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.thinkrite.assistant:id/logoLogin")));
 	}
 
 	public void enterCredentials(List<UserAccount> userAccounts) throws Throwable {
