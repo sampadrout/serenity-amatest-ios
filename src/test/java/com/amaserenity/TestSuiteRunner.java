@@ -1,24 +1,22 @@
-package com.amaserenity.runner;
+package com.amaserenity;
+
+import cucumber.api.CucumberOptions;
+
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+
+import org.junit.BeforeClass;
+import org.junit.AfterClass;
+import org.junit.runner.RunWith;
 
 import java.io.IOException;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
 
 import static com.amaserenity.utils.AppiumServer.startAppiumServer;
 import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-
-import net.serenitybdd.cucumber.CucumberWithSerenity;
-
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		features = "src/test/resources/features/",
-		glue = "com.amaserenity.stepdefinations"
+		glue = "com.amaserenity.steps"
 		)
 
 public class TestSuiteRunner {

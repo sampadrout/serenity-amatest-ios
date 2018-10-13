@@ -5,19 +5,34 @@ Feature: A registered user can log on to BM app
   So that i can manage my meetings
 
   Background:
-    Given User is on login page
-    		
+    Given user is on login screen
+
   Scenario: Existing user Verification
-    When user logs in using valid credentials as below
-        | username 							| password		|	phonenumber	|
-    		| traqatest5@gmail.com  | welcometr1	|	9546532543	|    
-    Then he should be given access to the app
+    When enters username, password and phone number
+      | username 			  | password    |	phonenumber	|
+      | traqatest5@gmail.com  | welcometr1  |	9546532543	|
+    And taps on login
+    And user is on Calendar Screen
+    And taps to selects google calendar
+    And accepts the calendar permission
+    And taps on to save the selected calendar
+    And user is on contacts screen
+    And allows the app to access the device contacts
+    And accepts the contacts permission
+    And user swipes through the tutorials screen to close it
+    And user should see the main screen
+    And user opens settings drawer
+    And user taps on settings
+    And user should see the settings screen
+    And user taps on sign out
+    And confirms sign out
+    Then user successfully sign out
 
   Scenario: Logging on with an incorrect password
-    When user logs on with wrong password as below
-    		| username 							| password		|	phonenumber	|
-    		| traqatest5@gmail.com  | wrong	|	9546532543	|
-    Then he should be informed that his password was incorrect
+    When user enters invalid username and password
+      | username 			  | password    |	phonenumber	|
+      | traqatest5@gmail.com  | wrong	    |	9546532543	|
+    And user should be informed that the password was incorrect
 
   #Scenario: Logging on with an expired account
     #Given the account has expired
