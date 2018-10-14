@@ -15,7 +15,7 @@ import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
 
-public class StartGenymotion {
+public final class StartGenymotion {
 	static String deviceName = "Google_Nexus_6P_7.1";
 
     public static void startgenymotion() throws ExecuteException, IOException, InterruptedException {

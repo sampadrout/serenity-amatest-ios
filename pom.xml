@@ -4,18 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ama</groupId>
-	<artifactId>BM_Automation_RegressionTesting</artifactId>
+	<artifactId>AMA_Automation_RegressionTesting</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<name>BM Project</name>
-	<description>BM automation testing with BDD Approach using Serenity, Cucumber</description>
+	<name>AMA Project</name>
+	<description>AMA automation testing with BDD Approach using Serenity, Cucumber</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<serenity.version>2.0.4</serenity.version>
 		<serenity.junit.version>2.0.4</serenity.junit.version>
 		<serenity.cucumber.version>1.9.15</serenity.cucumber.version>
-		<serenity.jira.version>1.9.0</serenity.jira.version>
 	</properties>
 
 	<repositories>
@@ -72,16 +71,6 @@
 			<artifactId>lambdaj</artifactId>
 			<version>2.3.3</version>
 		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-jira-plugin</artifactId>
-			<version>${serenity.jira.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-jira-requirements-provider</artifactId>
-			<version>${serenity.jira.version}</version>
-		</dependency>
 		<!--dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-jdk14</artifactId> 
 			<version>1.7.25</version> </dependency -->
 		<dependency>
@@ -98,9 +87,19 @@
 
 	<build>
 		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.20.1</version>
+				<version>2.22.0</version>
 				<configuration>
 					<!--parallel>classes</parallel> <threadCount>4</threadCount> <perCoreThreadCount>true</perCoreThreadCount -->
 				</configuration>
@@ -116,7 +115,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
+				<version>3.8.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -135,13 +134,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>net.serenity-bdd</groupId>
-						<artifactId>serenity-jira-requirements-provider</artifactId>
-						<version>${serenity.jira.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

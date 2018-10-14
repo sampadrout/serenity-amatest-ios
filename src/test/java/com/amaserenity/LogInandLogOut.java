@@ -15,11 +15,11 @@ import static com.amaserenity.utils.AppiumServer.stopAppiumServer;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		features = "src/test/resources/features/",
-		glue = "com.amaserenity.steps"
+		features = "src/test/resources/features/login.feature"
+//		glue = "com.amaserenity.steps.LoginScenarioSteps"
 		)
 
-public class TestSuiteRunner {
+public class LogInandLogOut {
 	
 /*	This is to manage webdriver instance by serenity */
 	
@@ -27,7 +27,7 @@ public class TestSuiteRunner {
 //	WebDriver appiumDriver;
 	
     @BeforeClass
-    public static void setUp() throws IOException {
+    public static void setUp() throws IOException, Exception {
         startAppiumServer();
     }
 

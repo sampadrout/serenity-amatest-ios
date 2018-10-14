@@ -124,6 +124,6 @@ public class UserSteps extends ScenarioSteps {
 
     @Step
     public void navigates_to_login_screen() {
-        settingsScreen.tapConfirmSignout();
+        loginScreen.openLoginScreen();
     }
 }

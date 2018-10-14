@@ -13,7 +13,7 @@ public class MainScreen extends PageObject {
     @FindBy(xpath="//*[@text='Daily View']")
     private WebElementFacade mainScreen;
 
-    @FindBy(xpath="//*[@contentDescription='Navigate up']")
+    @FindBy(xpath="//*[@content-desc='Navigate up']")
     private WebElementFacade openDrawer;
 
     @FindBy(xpath="//*[@text='Settings']")
@@ -24,7 +24,7 @@ public class MainScreen extends PageObject {
     }
 
     public void openSettingsDrawer() {
-        element(openDrawer).waitUntilClickable().click();
+        element(openDrawer).click();
     }
 
     public void tapSettingsOption() {

@@ -1,7 +1,7 @@
 @android @ios @regression @issue:IOSTRA-3532
-Feature: A registered user can log on to BM app
+Feature: A registered user can log on to AMA app
   As a registered user
-  I want to login to BM app using my username and password
+  I want to login to AMA app using my username and password
   So that i can manage my meetings
 
   Background:

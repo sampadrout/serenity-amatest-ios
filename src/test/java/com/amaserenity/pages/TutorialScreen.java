@@ -19,6 +19,10 @@ public class TutorialScreen extends PageObject {
     private WebElementFacade coachMark;
 */
 
+
+    @FindBy(id="com.thinkrite.assistant:id/three")
+    private WebElementFacade btnToThirdPage;
+
     @FindBy(id="com.thinkrite.assistant:id/fontTextViewClose")
     private WebElementFacade btnClose;
 
@@ -32,7 +36,7 @@ public class TutorialScreen extends PageObject {
         swipe.moveTo(19, 991)
         swipe.release();
         swipe.perform();*/
-
+/*
         TouchAction swipe_coach_mark1 = new TouchAction(((AppiumDriver)((WebDriverFacade) getDriver()).getProxiedDriver()))
                 .press(PointOption.point(1030,995))
                 .moveTo(PointOption.point(19, 991))
@@ -44,14 +48,14 @@ public class TutorialScreen extends PageObject {
                 .moveTo(PointOption.point(19, 991))
                 .release()
                 .perform();
-
+*/
 /*        (new TouchAction(getDriver()))
                 .press({x: 1030, y: 995})
                 .moveTo({x: 19: y: 991})
                 .release()
                 .perform();*/
+        element(btnToThirdPage).waitUntilClickable().click();
         element(btnClose).waitUntilClickable().click();
-
     }
 
 }

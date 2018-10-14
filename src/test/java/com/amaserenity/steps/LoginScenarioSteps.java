@@ -117,6 +117,7 @@ public class LoginScenarioSteps {
         user.enters_user_name(userAccounts);
         user.enters_password(userAccounts);
         user.enters_phone_number(userAccounts);
+        user.taps_to_login();
     }
 
     @Then("user should be informed that the password was incorrect")

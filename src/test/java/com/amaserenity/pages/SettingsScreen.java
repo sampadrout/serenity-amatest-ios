@@ -26,6 +26,6 @@ public class SettingsScreen extends PageObject {
     }
 
     public void tapConfirmSignout() {
-        element(signOut).waitUntilClickable().click();
+        element(confirmSignOut).waitUntilClickable().click();
     }
 }
