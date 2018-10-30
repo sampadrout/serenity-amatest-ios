@@ -1,5 +1,6 @@
 package com.amaserenity.steps;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.amaserenity.model.UserAccount;
@@ -72,7 +73,7 @@ public class LoginScenarioSteps {
     }
 
     @And("user swipes through the tutorials screen to close it")
-    public void and_user_swipes_through_the_tutorials_screen_to_close_it() {
+    public void and_user_swipes_through_the_tutorials_screen_to_close_it() throws InterruptedException, IOException {
         user.swipes_and_close_tutorial_screen();
     }
 

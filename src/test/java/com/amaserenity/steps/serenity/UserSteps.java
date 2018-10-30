@@ -11,6 +11,7 @@ import com.amaserenity.pages.SettingsScreen;
 import net.thucydides.core.steps.ScenarioSteps;
 import net.thucydides.core.annotations.Step;
 
+import java.io.IOException;
 import java.util.List;
 
 public class UserSteps extends ScenarioSteps {
@@ -88,7 +89,7 @@ public class UserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void swipes_and_close_tutorial_screen() {
+    public void swipes_and_close_tutorial_screen() throws InterruptedException, IOException {
         tutorialScreen.closeTutorialScreen();
     }
 
