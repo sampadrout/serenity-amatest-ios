@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContactsScreen extends PageObject {
 
-    @FindBy(xpath="//*[@text='Contacts']")
+    @FindBy(accessibilityId="Contacts")
     private WebElementFacade contacts;
 
-    @FindBy(id="com.thinkrite.assistant:id/buttonOk")
+    @FindBy(accessibilityId="okayAllowNotifications_button")
     private WebElementFacade btnContactsOK;
 
-    @FindBy(id="com.android.packageinstaller:id/permission_allow_button")
+    @FindBy(accessibilityId="OK")
     private WebElementFacade allowContactsAlert;
 
     public void isContactsScreenShown(){

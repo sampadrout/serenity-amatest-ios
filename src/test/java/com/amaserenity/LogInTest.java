@@ -25,7 +25,6 @@ public class LogInTest {
 	
 //	This is to manage webdriver instance by serenity
 
-	
 //	@Managed(driver = "appium")
 //	WebDriver appiumDriver;
 

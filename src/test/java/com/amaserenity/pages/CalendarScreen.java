@@ -10,16 +10,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CalendarScreen extends PageObject {
 
-    @FindBy(xpath="//*[@text='Calendars']")
+    @FindBy(accessibilityId="Calendars")
     private WebElementFacade calendar;
 
-    @FindBy(id="com.thinkrite.assistant:id/checkBoxThisDevice")
+    @FindBy(accessibilityId="calendar_checkbox")
     private WebElementFacade googlecalendarCheckbox;
 
-    @FindBy(id="com.android.packageinstaller:id/permission_allow_button")
+    @FindBy(accessibilityId="OK")
     private WebElementFacade allowCalendarAlert;
 
-    @FindBy(id="com.thinkrite.assistant:id/done")
+    @FindBy(accessibilityId="Done")
     private WebElementFacade btnCalendarSave;
 
     public void isCalendarScreenShown(){

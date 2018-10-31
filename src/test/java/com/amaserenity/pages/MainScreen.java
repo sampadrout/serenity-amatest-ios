@@ -10,13 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainScreen extends PageObject {
 
-    @FindBy(xpath="//*[@text='Daily View']")
+    @FindBy(accessibilityId="Daily View")
     private WebElementFacade mainScreen;
 
-    @FindBy(xpath="//*[@content-desc='Navigate up']")
+    @FindBy(accessibilityId="ToggleSettingsButton")
     private WebElementFacade openDrawer;
 
-    @FindBy(xpath="//*[@text='Settings']")
+    @FindBy(accessibilityId="Settings")
     private WebElementFacade settingsOption;
 
     public void isMainScreenShown() {

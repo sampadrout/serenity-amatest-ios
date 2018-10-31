@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AMA_Automation_RegressionTesting" />
         <module name="serenity-amatest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AMA_Automation_RegressionTesting" target="1.8" />
       <module name="serenity-amatest" target="1.8" />
     </bytecodeTargetLevel>
   </component>

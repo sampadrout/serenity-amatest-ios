@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/serenity-amatest.iml" filepath="$PROJECT_DIR$/.idea/serenity-amatest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AMA_Automation_RegressionTesting.iml" filepath="$PROJECT_DIR$/AMA_Automation_RegressionTesting.iml" />
     </modules>
   </component>
 </project>

@@ -15,22 +15,22 @@ import java.util.List;
 
 public class LoginScreen extends PageObject {
 
-    @FindBy(id="com.thinkrite.assistant:id/logoLogin")
+    @FindBy(accessibilityId="logo_cell")
     private WebElementFacade loginLogo;
 
-    @FindBy(id="com.thinkrite.assistant:id/emailEditText")
+    @FindBy(accessibilityId="emailAddress_textfield")
     private WebElementFacade emailAddress;
 
-    @FindBy(id="com.thinkrite.assistant:id/passwordEditText")
+    @FindBy(accessibilityId="password_textfield")
     private WebElement password;
 
-    @FindBy(id="com.thinkrite.assistant:id/e164PhNumEditText")
+    @FindBy(accessibilityId="numberInputTextField")
     private WebElementFacade phoneNumber;
 
-    @FindBy(id="com.thinkrite.assistant:id/buttonSignIn")
+    @FindBy(accessibilityId="signInButton")
     private WebElementFacade signIn;
 
-    @FindBy(id="android:id/message")
+    @FindBy(accessibilityId="Failed to sign in")
     private WebElementFacade loginFailed;
 
     public void openLoginScreen(){
@@ -63,7 +63,7 @@ public class LoginScreen extends PageObject {
     }
 
     public boolean isLoginFailedMsgShown(){
-        return element(loginFailed).waitUntilVisible().getText().contentEquals("Login failed due to an incorrect username or password.");
+        return element(loginFailed).waitUntilVisible().getText().contentEquals("Failed to sign in");
     }
 
 }

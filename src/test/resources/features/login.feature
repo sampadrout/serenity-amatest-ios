@@ -16,6 +16,9 @@ Feature: A registered user can log on to AMA app
     And taps to selects google calendar
     And accepts the calendar permission
     And taps on to save the selected calendar
+    And user is on notifications screen
+    And allows the app to access the device notifications
+    And accepts the notifications permission
     And user is on contacts screen
     And allows the app to access the device contacts
     And accepts the contacts permission

@@ -1,12 +1,7 @@
 package com.amaserenity.steps.serenity;
 
 import com.amaserenity.model.UserAccount;
-import com.amaserenity.pages.LoginScreen;
-import com.amaserenity.pages.CalendarScreen;
-import com.amaserenity.pages.ContactsScreen;
-import com.amaserenity.pages.TutorialScreen;
-import com.amaserenity.pages.MainScreen;
-import com.amaserenity.pages.SettingsScreen;
+import com.amaserenity.pages.*;
 
 import net.thucydides.core.steps.ScenarioSteps;
 import net.thucydides.core.annotations.Step;
@@ -18,6 +13,7 @@ public class UserSteps extends ScenarioSteps {
 
     LoginScreen loginScreen;
     CalendarScreen calendarScreen;
+    NotificationsScreen notificationsScreen;
     ContactsScreen contactsScreen;
     TutorialScreen tutorialScreen;
     MainScreen mainScreen;
@@ -71,6 +67,21 @@ public class UserSteps extends ScenarioSteps {
     @Step
     public void taps_to_Done() {
         calendarScreen.tapDone();
+    }
+
+    @Step
+    public void navigates_to_notifications_screen() {
+        notificationsScreen.isNotificationsScreenShown();
+    }
+
+    @Step
+    public void taps_on_Notifications() {
+        notificationsScreen.tapNotificationsOK();
+    }
+
+    @Step
+    public void taps_to_accept_notifications_permission_alert() {
+        notificationsScreen.acceptNotificationsAlert();
     }
 
     @Step

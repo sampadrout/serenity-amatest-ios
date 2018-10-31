@@ -57,6 +57,21 @@ public class LoginScenarioSteps {
         user.taps_to_Done();
     }
 
+    @And("user is on notifications screen")
+    public void and_user_is_on_otifications_screen() {
+        user.navigates_to_notifications_screen();
+    }
+
+    @And("allows the app to access the device notifications")
+    public void and_user_allows_the_app_to_access_the_device_notifications() {
+        user.taps_on_Notifications();
+    }
+
+    @And("accepts the notifications permission")
+    public void and_user_accepts_the_notifications_permission() {
+        user.taps_to_accept_notifications_permission_alert();
+    }
+
     @And("user is on contacts screen")
     public void and_user_is_on_contacts_screen() {
         user.navigates_to_contacts_screen();

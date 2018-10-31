@@ -28,13 +28,8 @@ public class TutorialScreen extends PageObject {
     private WebElementFacade coachMark;
 */
 
-
-    @FindBy(id="com.thinkrite.assistant:id/three")
-    private WebElementFacade btnToThirdPage;
-
-    @FindBy(id="com.thinkrite.assistant:id/fontTextViewClose")
+    @FindBy(accessibilityId="CLOSE")
     private WebElementFacade btnClose;
-
 
     public void closeTutorialScreen() throws InterruptedException, IOException {
 
@@ -46,15 +41,22 @@ public class TutorialScreen extends PageObject {
         swipe.release();
         swipe.perform();*/
 /*
+
+(new TouchAction(driver))
+  .press({x: 358, y: 349})
+  .moveTo({x: 13: y: 360})
+  .release()
+  .perform()
+
         TouchAction swipe_coach_mark1 = new TouchAction(((AppiumDriver)((WebDriverFacade) getDriver()).getProxiedDriver()))
-                .press(PointOption.point(1030,995))
-                .moveTo(PointOption.point(19, 991))
+                .press(PointOption.point(358,349))
+                .moveTo(PointOption.point(13, 349))
                 .release()
                 .perform();
 
         TouchAction swipe_coach_mark2 = new TouchAction(((AppiumDriver)((WebDriverFacade) getDriver()).getProxiedDriver()))
-                .press(PointOption.point(1030,995))
-                .moveTo(PointOption.point(19, 991))
+                .press(PointOption.point(358,349))
+                .moveTo(PointOption.point(13, 349))
                 .release()
                 .perform();
 */
@@ -71,7 +73,7 @@ public class TutorialScreen extends PageObject {
 //        swipe.swipeFromRightToLeft(driver);
 //        swipe.swipeFromRightToLeft(driver);
 
-        element(btnToThirdPage).waitUntilClickable().click();
+        //XCUIElementTypeApplication[@name="AgileMeeting Assistant"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton/XCUIElementTypeImage
         element(btnClose).waitUntilClickable().click();
     }
 

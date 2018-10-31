@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SettingsScreen extends PageObject {
 
-    @FindBy(xpath = "//*[@text='Settings']")
+    @FindBy(accessibilityId = "Settings")
     private WebElementFacade settings;
 
-    @FindBy(xpath = "//*[@text='Sign Out']")
+    @FindBy(accessibilityId = "Sign Out")
     private WebElementFacade signOut;
 
-    @FindBy(xpath = "//*[@text='OK']")
+    @FindBy(accessibilityId = "OK")
     private WebElementFacade confirmSignOut;
 
     public void isSettingsScreenShown() {
